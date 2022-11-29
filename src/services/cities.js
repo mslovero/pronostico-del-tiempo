@@ -1,6 +1,6 @@
 import { ajax } from "../tools/ajax";
 
-export const getCities = async () => {
+export const getCities = async   countryCode =>{
     const optionsRequest = {
         method: "GET",
         url: "https://spott.p.rapidapi.com/places",
@@ -9,9 +9,9 @@ export const getCities = async () => {
             'X-RapidAPI-Host': 'spott.p.rapidapi.com'
           },
           params: {
-            limit: 100,
+            limit: 20,
             type: "CITY",
-            country: "AR"
+            country: countryCode ?? "US",
           }
      };
     return await ajax(optionsRequest)
