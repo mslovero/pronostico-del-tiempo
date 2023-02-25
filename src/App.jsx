@@ -28,9 +28,10 @@ function App() {
 
 
    return (
-      <div div className='App'>
+      <div div className='color'>
          <div>
-            <label>Elije un pais:</label>
+            <h1>Clima del Mundo</h1>
+            <label>Elegí un pais:</label>
             <select onChange={countryHandler}>
                <option value="">Selecciona</option>
                {countries.map(country => <option key={country.cca2} value={country.cca2}> {country.name.common} </option>)}
@@ -39,7 +40,7 @@ function App() {
          
          {cities.length > 0 && (
             <div>
-               <label>Elije una ciudad:</label>
+               <label>Elegí una ciudad:</label>
                <select onChange={cityHandler}>
                <option value="">Selecciona</option>
                   {cities.map(city => <option key={city.id}> {city.name} </option>)}
@@ -51,7 +52,7 @@ function App() {
 
          {weather  && (
             <div>
-               <h2>Actual temperatura: {weather.main.temp}º</h2>
+               <h2>Temperatura actual: {weather.main.temp}º</h2>
                <p>Min: {weather.main.temp_min.toFixed()}°</p>
                <p>Max: {weather.main.temp_max.toFixed()}°</p>
                <img src={`http://openweathermap.org/img/wn/${weather.weather[0].icon}@2x.png`} alt="weather icon" />

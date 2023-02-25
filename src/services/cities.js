@@ -9,7 +9,7 @@ export const getCities = async   countryCode =>{
             'X-RapidAPI-Host': 'spott.p.rapidapi.com'
           },
           params: {
-            limit: 20,
+            limit: 100,
             type: "CITY",
             country: countryCode ?? "US",
           }
